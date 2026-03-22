@@ -1,0 +1,82 @@
+* text=auto eol=lf
+
+# Ignore generated resources in repository statistics
+src/generated/resources/** linguist-generated
+
+# Documents
+*.md       text diff=markdown linguist-detectable
+*.mdx      text diff=markdown
+*.mustache text
+*.txt      text
+
+# Graphics
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.gif      binary
+*.tif      binary
+*.tiff     binary
+*.ico      binary
+*.svg      text
+*.eps      binary
+
+# Scripts
+*.bash     text eol=lf
+*.fish     text eol=lf
+*.ksh      text eol=lf
+*.sh       text eol=lf
+*.zsh      text eol=lf
+# These are explicitly windows files and should use crlf
+*.[bB][aA][tT]   text eol=crlf
+*.[cC][mM][dD]   text eol=crlf
+*.[pP][sS]1      text eol=crlf
+
+# Serialisation
+*.json     text
+*.toml     text
+*.xml      text
+*.yaml     text
+*.yml      text
+*.lang     text
+*.mcmeta   text
+
+# Text files where line endings should be preserved
+*.patch    -text
+
+#
+# Exclude files from exporting
+#
+
+.gitattributes export-ignore
+.gitignore     export-ignore
+.gitkeep       export-ignore
+
+# Java sources
+*.java          text diff=java
+*.kt            text diff=kotlin
+*.groovy        text diff=java
+*.scala         text diff=java
+*.gradle        text diff=java
+*.gradle.kts    text diff=kotlin
+
+# These files are text and should be normalized (Convert crlf => lf)
+*.properties    text
+
+# These files are binary and should be left untouched
+# (binary is a macro for -text -diff)
+*.class         binary
+*.dll           binary
+*.ear           binary
+*.jar           binary
+*.so            binary
+*.war           binary
+*.jks           binary
+
+# Common build-tool wrapper scripts
+mvnw            text eol=lf
+gradlew         text eol=lf
+
+# Fix syntax highlighting on GitHub to allow comments
+.devcontainer.json linguist-language=JSON-with-Comments
+devcontainer.json linguist-language=JSON-with-Comments
+.vscode/*.json linguist-language=JSON-with-Comments
