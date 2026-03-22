@@ -1,0 +1,4 @@
+extends:
+  - "Jaronline/.github:.github/labels/standard.yml"
+  - "Jaronline/.github:.github/labels/bug.yml"
+labels: []
